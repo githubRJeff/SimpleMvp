@@ -18,12 +18,7 @@ public class BasePresenter<M extends BaseModel, V extends BaseView> implements I
     {
         this.model = model;
         this.view = view;
-        onAttach();
-    }
-
-    public BasePresenter(V view)
-    {
-        this.view = view;
+        this.compositeSubscription = new CompositeSubscription();
         onAttach();
     }
 
